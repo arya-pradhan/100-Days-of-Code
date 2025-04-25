@@ -47,14 +47,14 @@ def get_guess()->str:
     user_guess = str(input("\nGuess a letter: ")).lower()
     if len(user_guess) != 1:
         print("That ain't one letter\nTry again!")
-        get_guess()
+        return get_guess()
 
 
     if check_guessed(guess = user_guess):
         letters_guessed.append(user_guess)
     else:
         print("You already tried that one\nTry again!")
-        get_guess()
+        return get_guess()
     return user_guess
 
 
