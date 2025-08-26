@@ -16,7 +16,6 @@ word_map = ['_' for char in range(len(rand_word))]
 def main()-> None:
     lives = 6
     game_over = False
-    print(rand_word)
 
 
     while not game_over:
@@ -28,12 +27,15 @@ def main()-> None:
         if user_guess not in rand_word:
             print("That letter ain't there")
             lives -= 1
+            if lives >= 0:
+                print(f"You have {lives} lives left")
         else:
             print("Lucky guess")
 
 
         if lives < 0:
             print("...And they are dead. Great job.")
+            print(rand_word)
             game_over = True
 
 
