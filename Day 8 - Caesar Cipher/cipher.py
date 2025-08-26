@@ -8,5 +8,8 @@ def encrypt(original_text, shift_amount):
     cipher_text = ""
     for char in original_text:
         new_index =  alphabet.index(char) + shift_amount
+
+        new_index %= len(alphabet)
         cipher_text += alphabet[new_index]
-    print(cipher_text)
+
+    print(f"Here is the encoded result: {cipher_text}")
